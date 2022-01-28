@@ -1,10 +1,8 @@
 -- MeepCity Avatar Cloner
--- this was made specially for Synapse X
-
 -- synolope#7126
 
 
-getgenv().stealth = true -- saves avatar without exposing it to target if enabled
+getgenv().stealth = getgenv().stealth or true -- saves avatar without exposing it to target if enabled
 
 
 
