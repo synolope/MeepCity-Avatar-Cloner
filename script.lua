@@ -230,7 +230,7 @@ if game.PlaceId == 370731277 then
 
 	game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(State)
 		if State == Enum.TeleportState.Started then
-			syn.queue_on_teleport("getgenv().stealth = " .. tostring(getgenv().stealth))
+			syn.queue_on_teleport("print('e') getgenv().stealth = " .. tostring(getgenv().stealth))
 		end
 	end)
 
