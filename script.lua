@@ -228,6 +228,12 @@ if game.PlaceId == 370731277 then
 		StealthToggle.Text = "<b>Stealth:</b> " .. tostring(getgenv().stealth)
 	end)
 
+	game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(State)
+		if State == Enum.TeleportState.Started then
+			syn.queue_on_teleport("getgenv().stealth = " .. tostring(getgenv().stealth))
+		end
+	end)
+
 	local overlap = false
 
 	function LoadPlayer(player)
