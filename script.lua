@@ -202,6 +202,19 @@ if game.PlaceId == 370731277 then
 		game:GetService("ReplicatedStorage").Connection:InvokeServer(unpack(args))
 	end
 
+	game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(State)
+		if State == Enum.TeleportState.Started then
+			local b = getgenv().stealth
+			syn.queue_on_teleport([[
+			wait()
+			getgenv().t = true
+			wait()
+			getgenv().stealth = ]] .. tostring(b) .. [[
+			loadstring(game:HttpGet('https://raw.githubusercontent.com/synolope/MeepCity-Avatar-Cloner/main/script.lua', true))()
+			]])
+		end
+	end)
+
 	local ScreenGui = Instance.new("ScreenGui",game.CoreGui)
 	ScreenGui.ResetOnSpawn = false
 	ScreenGui.IgnoreGuiInset = true

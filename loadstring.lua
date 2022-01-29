@@ -3,6 +3,7 @@
 
 -- synolope#7126
 
-getgenv().stealth = true -- saves avatar without exposing it to target if enabled
-
-loadstring(game:HttpGet('https://raw.githubusercontent.com/synolope/MeepCity-Avatar-Cloner/main/script.lua', true))()
+wait(.5)
+if not getgenv().t then
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/synolope/MeepCity-Avatar-Cloner/main/script.lua', true))()
+end
