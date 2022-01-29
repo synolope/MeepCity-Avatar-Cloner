@@ -356,6 +356,7 @@ if game.PlaceId == 370731277 then
 								local character = LP.Character or LP.CharacterAdded:Wait()
 								local root = character:WaitForChild("HumanoidRootPart")
 								ConnectionEvent:FireServer(315,wearing,true)
+								wait(1)
 								root.CFrame = pos
 								root.Anchored = false
 							end
