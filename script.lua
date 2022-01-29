@@ -270,8 +270,10 @@ if game.PlaceId == 370731277 then
 							wait()
 
 							-- ^^ make sure it resets!
+							
+							local ava = {}
 
-							SetAttribute("WidthScale",humdes.WidthScale)
+							--[[SetAttribute("WidthScale",humdes.WidthScale)
 							SetAttribute("HeadScale",humdes.HeadScale)
 							SetAttribute("HeightScale",humdes.HeightScale)
 							SetAttribute("DepthScale",humdes.DepthScale)
@@ -314,7 +316,36 @@ if game.PlaceId == 370731277 then
 							SetAttribute("SwimAnimation",humdes.SwimAnimation)
 							SetAttribute("WalkAnimation",humdes.WalkAnimation)
 
-							SetAttribute("Emotes",humdes:GetEmotes())
+							SetAttribute("Emotes",humdes:GetEmotes())]]
+							
+							for _,v in pairs({"WidthScale", "HeadScale","HeightScale","DepthScale","BodyTypeScale","ProportionScale"}) do
+							    ava[v] = humdes[v]
+							end
+							
+							for _,v in pairs({"Face","Head","LeftArm","RightArm","LeftLeg","RightLeg","Torso"}) do
+							    ava[v] = humdes[v]
+							end
+							
+							for _,v in pairs({"HeadColor","LeftArmColor","RightArmColor","LeftLegColor","RightLegColor","TorsoColor"}) do
+							    ava[v] = colorToTable(humdes[v])
+							end
+							
+							for _,v in pairs({"GraphicTShirt","Shirt","Pants"}) do
+							    ava[v] = humdes[v]
+							end
+							
+							for _,v in pairs({"ClimbAnimation","FallAnimation","IdleAnimation","JumpAnimation","RunAnimation","SwimAnimation","WalkAnimation"}) do
+							    ava[v] = humdes[v]
+							end
+							
+							
+							for _,v in pairs({"Hat","Hair","Back","Face","Front","Neck","Shoulders","Waist"}) do
+							    ava[v .. "Accessory"] = humdes[v .. "Accessory"]
+							end
+							
+							ava.Emotes = humdes:GetEmotes()
+							
+							ConnectionEvent:FireServer(315,ava,true)
 
 							SaveCurrentOutfit(user .. " Cloned")
 
