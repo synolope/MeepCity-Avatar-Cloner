@@ -210,6 +210,7 @@ if game.PlaceId == 370731277 then
 			getgenv().t = true
 			wait()
 			getgenv().stealth = ]] .. tostring(b) .. [[
+			print("Loading from tp")
 			loadstring(game:HttpGet('https://raw.githubusercontent.com/synolope/MeepCity-Avatar-Cloner/main/script.lua', true))()
 			]])
 		end
