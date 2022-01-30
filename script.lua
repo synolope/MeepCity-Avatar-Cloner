@@ -23,7 +23,7 @@ getgenv().stealth = getgenv().stealth or true -- saves avatar without exposing i
 
 
 
-if game.PlaceId == 370731277 then
+if game.PlaceId == 370731277 or game.PlaceId == 3345269329 then
 	wait(3)
 	local l__ReplicatedStorage__2 = game:GetService("ReplicatedStorage")
 	local Constants = require(l__ReplicatedStorage__2:WaitForChild("Constants"))
