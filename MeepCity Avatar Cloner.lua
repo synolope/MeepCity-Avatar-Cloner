@@ -1,4 +1,4 @@
--- MeepCity Avatar Cloner
+-Gregory_S- MeepCity Avatar Cloner
 -- made specially for Synapse X
 
 -- synolope#7126
